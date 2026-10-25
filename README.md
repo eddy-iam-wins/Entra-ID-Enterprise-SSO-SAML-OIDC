@@ -1,18 +1,18 @@
-\# Microsoft Entra ID Enterprise SSO — SAML 2.0 \& OpenID Connect
+# Microsoft Entra ID Enterprise SSO — SAML 2.0 & OpenID Connect
 
 
 
-\## Project Overview
+## Project Overview
 
 
 
-This project demonstrates the implementation, troubleshooting, and validation of enterprise Single Sign-On (SSO) using \*\*Microsoft Entra ID\*\* with two commonly used authentication and federation protocols:
+This project demonstrates the implementation, troubleshooting, and validation of enterprise Single Sign-On (SSO) using **Microsoft Entra ID** with two commonly used authentication and federation protocols:
 
 
 
-\- \*\*SAML 2.0\*\* — Microsoft Entra ID integrated with Salesforce
+- **SAML 2.0** — Microsoft Entra ID integrated with Salesforce
 
-\- \*\*OpenID Connect (OIDC)\*\* — Microsoft Entra ID integrated with a custom Python/Flask Employee Portal using the Authorization Code flow
+- **OpenID Connect (OIDC)** — Microsoft Entra ID integrated with a custom Python/Flask Employee Portal using the Authorization Code flow
 
 
 
@@ -24,29 +24,29 @@ Beyond configuring authentication, the project implements:
 
 
 
-\- Group-based application access
+- Group-based application access
 
-\- Enterprise Application assignment enforcement
+- Enterprise Application assignment enforcement
 
-\- Positive and negative authorization testing
+- Positive and negative authorization testing
 
-\- SAML identity mapping
+- SAML identity mapping
 
-\- OIDC Authorization Code flow
+- OIDC Authorization Code flow
 
-\- Authentication troubleshooting
+- Authentication troubleshooting
 
-\- Microsoft Entra sign-in log investigation
+- Microsoft Entra sign-in log investigation
 
-\- Independent post-configuration validation using Microsoft Graph PowerShell
-
-
-
-\---
+- Independent post-configuration validation using Microsoft Graph PowerShell
 
 
 
-\## Business Scenario
+---
+
+
+
+## Business Scenario
 
 
 
@@ -58,15 +58,15 @@ The environment contains applications using different authentication protocols:
 
 
 
-\- \*\*Salesforce\*\* requires enterprise federation using SAML 2.0.
+- **Salesforce** requires enterprise federation using SAML 2.0.
 
-\- A custom \*\*Contoso Employee Portal\*\* uses OpenID Connect.
+- A custom **Contoso Employee Portal** uses OpenID Connect.
 
-\- Application access must be controlled through Microsoft Entra ID security groups.
+- Application access must be controlled through Microsoft Entra ID security groups.
 
-\- Unauthorized users must be prevented from accessing protected applications.
+- Unauthorized users must be prevented from accessing protected applications.
 
-\- Authentication failures must be investigated using application errors, protocol evidence, and Microsoft Entra sign-in logs.
+- Authentication failures must be investigated using application errors, protocol evidence, and Microsoft Entra sign-in logs.
 
 
 
@@ -74,19 +74,19 @@ The objective is to provide centralized authentication while maintaining applica
 
 
 
-\---
+---
 
 
 
-\## Architecture
+## Architecture
 
 
 
-!\[Microsoft Entra ID Enterprise SSO Architecture](Diagrams/01-Entra-Enterprise-SSO-Architecture.png)
+![Microsoft Entra ID Enterprise SSO Architecture](Diagrams/01-Entra-Enterprise-SSO-Architecture.png)
 
 
 
-\### SAML Authentication Path
+### SAML Authentication Path
 
 
 
@@ -122,7 +122,7 @@ Authenticated Session
 
 
 
-\### OpenID Connect Authentication Path
+### OpenID Connect Authentication Path
 
 
 
@@ -166,11 +166,11 @@ Authenticated Application Session
 
 
 
-\---
+---
 
 
 
-\## Technologies Used
+## Technologies Used
 
 
 
@@ -204,15 +204,15 @@ Authenticated Application Session
 
 
 
-\---
+---
 
 
 
-\# Identity \& Access Design
+# Identity & Access Design
 
 
 
-Application access was designed around \*\*security-group-based assignment\*\* rather than individual user assignments.
+Application access was designed around **security-group-based assignment** rather than individual user assignments.
 
 
 
@@ -270,19 +270,19 @@ This demonstrates an important IAM distinction:
 
 
 
-> \*\*Authentication establishes identity. Authorization determines whether that identity may access the application.\*\*
+> **Authentication establishes identity. Authorization determines whether that identity may access the application.**
 
 
 
-\---
+---
 
 
 
-\# SAML 2.0 — Salesforce
+# SAML 2.0 — Salesforce
 
 
 
-\## Integration Design
+## Integration Design
 
 
 
@@ -308,27 +308,27 @@ The integration included:
 
 
 
-\- Salesforce Enterprise Application
+- Salesforce Enterprise Application
 
-\- SAML-based Single Sign-On
+- SAML-based Single Sign-On
 
-\- Entity Identifier
+- Entity Identifier
 
-\- Reply URL / Assertion Consumer Service endpoint
+- Reply URL / Assertion Consumer Service endpoint
 
-\- Microsoft Entra federation metadata
+- Microsoft Entra federation metadata
 
-\- Identity Provider certificate
+- Identity Provider certificate
 
-\- SAML issuer
+- SAML issuer
 
-\- NameID claim
+- NameID claim
 
-\- Salesforce Federation ID
+- Salesforce Federation ID
 
-\- Group-based application assignment
+- Group-based application assignment
 
-\- Assignment-required enforcement
+- Assignment-required enforcement
 
 
 
@@ -336,15 +336,15 @@ The Salesforce Federation ID was mapped to the Microsoft Entra user identity sup
 
 
 
-!\[Entra SAML Configuration](Screenshots/02-SAML-Salesforce/13-Entra-Basic-SAML-Configuration-Configured.png)
+![Entra SAML Configuration](Screenshots/02-SAML-Salesforce/13-Entra-Basic-SAML-Configuration-Configured.png)
 
 
 
-\---
+---
 
 
 
-\## Group-Based Salesforce Access
+## Group-Based Salesforce Access
 
 
 
@@ -380,15 +380,15 @@ This ensured that only explicitly assigned users or members of an assigned group
 
 
 
-!\[Salesforce Group Assignment](Screenshots/02-SAML-Salesforce/20-Entra-Salesforce-Group-Assignment.png)
+![Salesforce Group Assignment](Screenshots/02-SAML-Salesforce/20-Entra-Salesforce-Group-Assignment.png)
 
 
 
-\---
+---
 
 
 
-\## Successful SAML Authentication
+## Successful SAML Authentication
 
 
 
@@ -404,19 +404,19 @@ Alex Carter successfully accessed Salesforce through federated SSO.
 
 
 
-!\[Successful Salesforce SSO](Screenshots/02-SAML-Salesforce/24c-Alex-SP-Initiated-SAML-SSO-Success.png)
+![Successful Salesforce SSO](Screenshots/02-SAML-Salesforce/24c-Alex-SP-Initiated-SAML-SSO-Success.png)
 
 
 
-\---
+---
 
 
 
-\# OpenID Connect — Contoso Employee Portal
+# OpenID Connect — Contoso Employee Portal
 
 
 
-\## Integration Design
+## Integration Design
 
 
 
@@ -440,15 +440,15 @@ Identity Library        = MSAL
 
 
 
-Unlike the Salesforce integration, the Employee Portal uses an \*\*App Registration\*\* to represent the application's identity and authentication configuration in Microsoft Entra ID.
+Unlike the Salesforce integration, the Employee Portal uses an **App Registration** to represent the application's identity and authentication configuration in Microsoft Entra ID.
 
 
 
-\---
+---
 
 
 
-\## Authorization Code Flow
+## Authorization Code Flow
 
 
 
@@ -484,15 +484,15 @@ The server-side application then completes the authorization-code flow and obtai
 
 
 
-!\[OIDC Authorization Request](Screenshots/04-OIDC/08-Entra-OIDC-Authorization-Request.png)
+![OIDC Authorization Request](Screenshots/04-OIDC/08-Entra-OIDC-Authorization-Request.png)
 
 
 
-\---
+---
 
 
 
-\## Successful OIDC Authentication
+## Successful OIDC Authentication
 
 
 
@@ -504,15 +504,15 @@ The portal displays selected identity and authentication context while sensitive
 
 
 
-!\[Alex OIDC Authentication](Screenshots/04-OIDC/10-Alex-OIDC-Authentication-Success.png)
+![Alex OIDC Authentication](Screenshots/04-OIDC/10-Alex-OIDC-Authentication-Success.png)
 
 
 
-\---
+---
 
 
 
-\# Application Authorization
+# Application Authorization
 
 
 
@@ -552,11 +552,11 @@ was enabled.
 
 
 
-\---
+---
 
 
 
-\## Authorized User — Jordan Lee
+## Authorized User — Jordan Lee
 
 
 
@@ -576,15 +576,15 @@ After authenticating through Microsoft Entra ID, Jordan successfully accessed th
 
 
 
-!\[Jordan Authorized OIDC Access](Screenshots/06-Validation/32-Jordan-OIDC-Authorized-Access.png)
+![Jordan Authorized OIDC Access](Screenshots/06-Validation/32-Jordan-OIDC-Authorized-Access.png)
 
 
 
-\---
+---
 
 
 
-\## Unauthorized User — Cameron Brooks
+## Unauthorized User — Cameron Brooks
 
 
 
@@ -608,11 +608,11 @@ The error indicated that the user was not directly assigned and was not a member
 
 
 
-!\[Cameron OIDC Access Blocked](Screenshots/06-Validation/33-Cameron-OIDC-AADSTS50105-Access-Blocked.png)
+![Cameron OIDC Access Blocked](Screenshots/06-Validation/33-Cameron-OIDC-AADSTS50105-Access-Blocked.png)
 
 
 
-This validates the distinction between \*\*authentication\*\* and \*\*application authorization\*\*.
+This validates the distinction between **authentication** and **application authorization**.
 
 
 
@@ -620,11 +620,11 @@ A user can possess a valid Entra identity while still being denied access to a s
 
 
 
-\---
+---
 
 
 
-\# Troubleshooting
+# Troubleshooting
 
 
 
@@ -664,11 +664,11 @@ Verification
 
 
 
-\---
+---
 
 
 
-\## SAML Troubleshooting — Federation ID / NameID Mapping
+## SAML Troubleshooting — Federation ID / NameID Mapping
 
 
 
@@ -676,7 +676,7 @@ A controlled identity-mapping failure was introduced by changing Alex Carter's S
 
 
 
-\### Failure
+### Failure
 
 
 
@@ -684,7 +684,7 @@ The SAML authentication attempt reached Salesforce, but Salesforce could not map
 
 
 
-\### Evidence \& Investigation
+### Evidence & Investigation
 
 
 
@@ -696,11 +696,11 @@ The validator reported that Salesforce was unable to map the subject to a Salesf
 
 
 
-!\[SAML User Mapping Failure](Screenshots/03-SAML-Troubleshooting/05-SAML-Assertion-Validator-User-Mapping-Failure.png)
+![SAML User Mapping Failure](Screenshots/03-SAML-Troubleshooting/05-SAML-Assertion-Validator-User-Mapping-Failure.png)
 
 
 
-\### Root Cause
+### Root Cause
 
 
 
@@ -708,7 +708,7 @@ The Federation ID configured on the Salesforce user did not match the NameID val
 
 
 
-\### Remediation
+### Remediation
 
 
 
@@ -716,7 +716,7 @@ The Salesforce Federation ID was restored to the correct identity value.
 
 
 
-\### Verification
+### Verification
 
 
 
@@ -724,11 +724,11 @@ SAML SSO was tested again and completed successfully.
 
 
 
-!\[SAML Remediation Success](Screenshots/03-SAML-Troubleshooting/07-Alex-SAML-SSO-Success-After-Remediation.png)
+![SAML Remediation Success](Screenshots/03-SAML-Troubleshooting/07-Alex-SAML-SSO-Success-After-Remediation.png)
 
 
 
-\### Key Finding
+### Key Finding
 
 
 
@@ -736,15 +736,15 @@ This scenario demonstrated that the SAML trust relationship and assertion valida
 
 
 
-\---
+---
 
 
 
-\# OIDC Troubleshooting
+# OIDC Troubleshooting
 
 
 
-\## MSAL Reserved Scope Error
+## MSAL Reserved Scope Error
 
 
 
@@ -760,7 +760,7 @@ ValueError: You cannot use any scope value that is reserved.
 
 
 
-\### Investigation
+### Investigation
 
 
 
@@ -768,7 +768,7 @@ The authentication implementation was reviewed to determine how OIDC scopes were
 
 
 
-\### Root Cause
+### Root Cause
 
 
 
@@ -776,7 +776,7 @@ The initial authentication logic manually supplied reserved OIDC scope values in
 
 
 
-\### Remediation
+### Remediation
 
 
 
@@ -804,7 +804,7 @@ acquire\_token\_by\_auth\_code\_flow()
 
 
 
-\### Verification
+### Verification
 
 
 
@@ -812,11 +812,11 @@ The application successfully generated the Microsoft Entra authorization request
 
 
 
-\---
+---
 
 
 
-\## Redirect URI Mismatch — AADSTS50011
+## Redirect URI Mismatch — AADSTS50011
 
 
 
@@ -864,11 +864,11 @@ AADSTS50011
 
 
 
-!\[OIDC Redirect URI Mismatch](Screenshots/05-OIDC-Troubleshooting/07-OIDC-AADSTS50011-Redirect-URI-Mismatch.png)
+![OIDC Redirect URI Mismatch](Screenshots/05-OIDC-Troubleshooting/07-OIDC-AADSTS50011-Redirect-URI-Mismatch.png)
 
 
 
-\### Root Cause
+### Root Cause
 
 
 
@@ -876,7 +876,7 @@ The Redirect URI supplied by the application did not exactly match a Redirect UR
 
 
 
-\### Remediation
+### Remediation
 
 
 
@@ -892,7 +892,7 @@ http://localhost:5000/auth/callback
 
 
 
-\### Verification
+### Verification
 
 
 
@@ -904,15 +904,15 @@ This demonstrates the importance of exact Redirect URI matching in OAuth 2.0 and
 
 
 
-\---
+---
 
 
 
-\# Microsoft Graph Validation
+# Microsoft Graph Validation
 
 
 
-Microsoft Graph PowerShell was used as an \*\*independent post-configuration validation layer\*\*.
+Microsoft Graph PowerShell was used as an **independent post-configuration validation layer**.
 
 
 
@@ -924,31 +924,31 @@ Graph validation confirmed:
 
 
 
-\- Contoso Employee Portal application object
+- Contoso Employee Portal application object
 
-\- Single-tenant configuration
+- Single-tenant configuration
 
-\- Enterprise Application / service principal
+- Enterprise Application / service principal
 
-\- Service principal enabled state
+- Service principal enabled state
 
-\- Assignment-required enforcement
+- Assignment-required enforcement
 
-\- Employee Portal security group membership
+- Employee Portal security group membership
 
-\- Group-to-application assignment
+- Group-to-application assignment
 
-\- Registered Redirect URI
+- Registered Redirect URI
 
-\- Declared OIDC identity scopes
-
-
-
-\---
+- Declared OIDC identity scopes
 
 
 
-\## Service Principal Validation
+---
+
+
+
+## Service Principal Validation
 
 
 
@@ -968,7 +968,7 @@ AppRoleAssignmentRequired: True
 
 
 
-!\[Graph Service Principal Validation](Screenshots/06-Validation/38-Graph-OIDC-Service-Principal-Validation.png)
+![Graph Service Principal Validation](Screenshots/06-Validation/38-Graph-OIDC-Service-Principal-Validation.png)
 
 
 
@@ -976,11 +976,11 @@ AppRoleAssignmentRequired: True
 
 
 
-\---
+---
 
 
 
-\## Group Membership \& Application Assignment
+## Group Membership & Application Assignment
 
 
 
@@ -992,7 +992,7 @@ Cameron Brooks was not included.
 
 
 
-!\[Graph Group Membership](Screenshots/06-Validation/40-Graph-EmployeePortal-Group-Members.png)
+![Graph Group Membership](Screenshots/06-Validation/40-Graph-EmployeePortal-Group-Members.png)
 
 
 
@@ -1032,15 +1032,15 @@ Group
 
 
 
-!\[Graph Application Assignment](Screenshots/06-Validation/41-Graph-EmployeePortal-Group-App-Assignment.png)
+![Graph Application Assignment](Screenshots/06-Validation/41-Graph-EmployeePortal-Group-App-Assignment.png)
 
 
 
-\---
+---
 
 
 
-\## OIDC Scope Validation
+## OIDC Scope Validation
 
 
 
@@ -1058,15 +1058,15 @@ profile
 
 
 
-!\[Graph OIDC Permission Validation](Screenshots/06-Validation/43-Graph-OIDC-Permission-Validation.png)
+![Graph OIDC Permission Validation](Screenshots/06-Validation/43-Graph-OIDC-Permission-Validation.png)
 
 
 
-\---
+---
 
 
 
-\# SAML vs. OpenID Connect
+# SAML vs. OpenID Connect
 
 
 
@@ -1104,11 +1104,11 @@ Although both integrations provide centralized authentication through Microsoft 
 
 
 
-\---
+---
 
 
 
-\# Security Considerations
+# Security Considerations
 
 
 
@@ -1116,25 +1116,25 @@ Security practices incorporated into the project include:
 
 
 
-\- Dedicated security groups for application access
+- Dedicated security groups for application access
 
-\- Assignment-required enforcement
+- Assignment-required enforcement
 
-\- Explicit unauthorized-user testing
+- Explicit unauthorized-user testing
 
-\- Authorization Code flow for the server-side OIDC application
+- Authorization Code flow for the server-side OIDC application
 
-\- Client Secret stored in a local `.env` file rather than hardcoded into source code
+- Client Secret stored in a local `.env` file rather than hardcoded into source code
 
-\- `.env` excluded from source control
+- `.env` excluded from source control
 
-\- Python virtual environment excluded from source control
+- Python virtual environment excluded from source control
 
-\- Safe `.env.example` provided without credentials
+- Safe `.env.example` provided without credentials
 
-\- Sensitive identifiers redacted from public screenshots where appropriate
+- Sensitive identifiers redacted from public screenshots where appropriate
 
-\- Microsoft Graph used for independent configuration validation
+- Microsoft Graph used for independent configuration validation
 
 
 
@@ -1142,11 +1142,11 @@ The lab uses a client secret for the server-side OIDC application. Production en
 
 
 
-\---
+---
 
 
 
-\# Project Results
+# Project Results
 
 
 
@@ -1154,39 +1154,39 @@ The completed project demonstrates hands-on experience with:
 
 
 
-\- Microsoft Entra ID enterprise SSO
+- Microsoft Entra ID enterprise SSO
 
-\- SAML 2.0 federation
+- SAML 2.0 federation
 
-\- OpenID Connect
+- OpenID Connect
 
-\- OAuth 2.0 Authorization Code flow
+- OAuth 2.0 Authorization Code flow
 
-\- SAML assertion-based identity mapping
+- SAML assertion-based identity mapping
 
-\- OIDC identity claims
+- OIDC identity claims
 
-\- App Registrations
+- App Registrations
 
-\- Enterprise Applications
+- Enterprise Applications
 
-\- Service principals
+- Service principals
 
-\- Group-based application authorization
+- Group-based application authorization
 
-\- Assignment-required enforcement
+- Assignment-required enforcement
 
-\- Positive and negative access testing
+- Positive and negative access testing
 
-\- Entra sign-in log investigation
+- Entra sign-in log investigation
 
-\- SAML troubleshooting
+- SAML troubleshooting
 
-\- OIDC troubleshooting
+- OIDC troubleshooting
 
-\- Microsoft Graph PowerShell validation
+- Microsoft Graph PowerShell validation
 
-\- Secure application credential handling
+- Secure application credential handling
 
 
 
@@ -1194,11 +1194,11 @@ The project demonstrates how Microsoft Entra ID can provide a centralized identi
 
 
 
-\---
+---
 
 
 
-\# Repository Structure
+# Repository Structure
 
 
 
@@ -1258,15 +1258,15 @@ Entra-ID-Enterprise-SSO-SAML-OIDC
 
 
 
-\---
+---
 
 
 
-\## Key IAM Concepts Demonstrated
+## Key IAM Concepts Demonstrated
 
 
 
-\*\*Authentication\*\*
+**Authentication**
 
 
 
@@ -1274,7 +1274,7 @@ SAML 2.0 • OpenID Connect • Single Sign-On • Authorization Code Flow • F
 
 
 
-\*\*Authorization\*\*
+**Authorization**
 
 
 
@@ -1282,7 +1282,7 @@ Security Groups • Enterprise Application Assignment • Assignment Required �
 
 
 
-\*\*Identity Architecture\*\*
+**Identity Architecture**
 
 
 
@@ -1290,7 +1290,7 @@ App Registrations • Enterprise Applications • Service Principals • Identit
 
 
 
-\*\*Troubleshooting\*\*
+**Troubleshooting**
 
 
 
@@ -1298,9 +1298,15 @@ Entra Sign-in Logs • SAML Assertion Validation • NameID Mapping • AADSTS50
 
 
 
-\*\*Administration \& Validation\*\*
+**Administration & Validation**
 
 
 
 Microsoft Graph • Graph PowerShell • Application Inspection • Service Principal Inspection • Group Membership Validation • Application Assignment Validation
+
+
+
+
+
+
 
