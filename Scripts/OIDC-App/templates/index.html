@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contoso Employee Portal</title>
+</head>
+
+<body>
+
+    <h1>Contoso Employee Portal</h1>
+
+    {% if user %}
+
+        <h2>Welcome, {{ user.name }}</h2>
+
+        <p><strong>Authentication Provider:</strong> Microsoft Entra ID</p>
+        <p><strong>Authentication Protocol:</strong> OpenID Connect</p>
+        <p><strong>Flow:</strong> Authorization Code</p>
+
+        <hr>
+
+        <h3>Authenticated Identity</h3>
+
+        <p><strong>Name:</strong> {{ user.name }}</p>
+        <p><strong>Username:</strong> {{ user.username }}</p>
+        <p><strong>Tenant ID:</strong> {{ user.tenant_id }}</p>
+        <p><strong>Object ID:</strong> {{ user.object_id }}</p>
+
+        <hr>
+
+        <h3>ID Token Validation Context</h3>
+
+        <p><strong>Issuer:</strong> {{ user.issuer }}</p>
+        <p><strong>Audience:</strong> {{ user.audience }}</p>
+
+        <br>
+
+        <a href="/logout">Sign out</a>
+
+    {% else %}
+
+        <p>
+            Authenticate with your organizational Microsoft Entra ID account
+            to access the employee portal.
+        </p>
+
+        <a href="/login">Sign in with Microsoft</a>
+
+    {% endif %}
+
+</body>
+</html>
