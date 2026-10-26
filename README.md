@@ -88,80 +88,42 @@ The objective is to provide centralized authentication while maintaining applica
 
 ### SAML Authentication Path
 
-
-
 ```text
-
 User
-
-&#x20; ↓
-
+  ↓
 Salesforce
-
-&#x20; ↓
-
+  ↓
 Microsoft Entra ID
-
-&#x20; ↓
-
+  ↓
 SAML Authentication
-
-&#x20; ↓
-
+  ↓
 SAML Assertion
-
-&#x20; ↓
-
+  ↓
 Salesforce
-
-&#x20; ↓
-
+  ↓
 Authenticated Session
-
 ```
 
 
 
 ### OpenID Connect Authentication Path
 
-
-
 ```text
-
 User
-
-&#x20; ↓
-
+  ↓
 Contoso Employee Portal
-
-&#x20; ↓
-
-Microsoft Entra ID /authorize
-
-&#x20; ↓
-
-User Authentication
-
-&#x20; ↓
-
+  ↓
+Microsoft Entra ID
+  ↓
+OIDC Authorization Request
+  ↓
 Authorization Code
-
-&#x20; ↓
-
-Employee Portal Redirect URI
-
-&#x20; ↓
-
-Microsoft Entra ID /token
-
-&#x20; ↓
-
+  ↓
+Contoso Employee Portal
+  ↓
 ID Token
-
-&#x20; ↓
-
-Authenticated Application Session
-
+  ↓
+Authenticated Session
 ```
 
 
@@ -637,29 +599,17 @@ Each major troubleshooting scenario followed:
 
 
 ```text
-
 Failure
-
-&#x20;  ↓
-
+  ↓
 Evidence
-
-&#x20;  ↓
-
+  ↓
 Investigation
-
-&#x20;  ↓
-
+  ↓
 Root Cause
-
-&#x20;  ↓
-
+  ↓
 Remediation
-
-&#x20;  ↓
-
+  ↓
 Verification
-
 ```
 
 
