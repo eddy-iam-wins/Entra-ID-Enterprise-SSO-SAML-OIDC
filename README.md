@@ -137,33 +137,19 @@ Authenticated Session
 
 
 | Technology | Purpose |
-
 |---|---|
-
 | Microsoft Entra ID | Identity provider and centralized application access control |
-
 | Enterprise Applications | Service principal and application assignment management |
-
 | App Registrations | OIDC application identity and authentication configuration |
-
 | SAML 2.0 | Federated authentication with Salesforce |
-
 | OpenID Connect | Authentication for the Employee Portal |
-
 | OAuth 2.0 Authorization Code Flow | Authorization flow supporting OIDC authentication |
-
 | Salesforce Developer Edition | SAML Service Provider |
-
 | Python | Employee Portal application |
-
 | Flask | Web application framework |
-
 | Microsoft Authentication Library (MSAL) | Microsoft identity platform integration |
-
 | Microsoft Graph PowerShell | Independent configuration validation |
-
 | Entra Sign-in Logs | Authentication and authorization investigation |
-
 
 
 ---
@@ -197,13 +183,9 @@ Three test identities supported positive and negative testing:
 
 
 | User | Salesforce | Employee Portal | Purpose |
-
-|---|---:|---:|---|
-
+|---|---|---|---|
 | Alex Carter | Authorized | Authorized | Positive authentication testing |
-
 | Jordan Lee | Authorized | Authorized | Secondary positive authorization testing |
-
 | Cameron Brooks | Unauthorized | Unauthorized | Negative authorization testing |
 
 
