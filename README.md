@@ -143,7 +143,7 @@ Authenticated Session
 | App Registrations | OIDC application identity and authentication configuration |
 | SAML 2.0 | Federated authentication with Salesforce |
 | OpenID Connect | Authentication for the Employee Portal |
-| OAuth 2.0 Authorization Code Flow | Authorization flow supporting OIDC authentication |
+| OAuth 2.0 Authorization Code Flow | Authorization flow used by the OIDC authentication implementation |
 | Salesforce Developer Edition | SAML Service Provider |
 | Python | Employee Portal application |
 | Flask | Web application framework |
