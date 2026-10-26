@@ -1003,31 +1003,18 @@ profile
 
 
 | Area | SAML 2.0 | OpenID Connect |
-
 |---|---|---|
-
 | Project Application | Salesforce | Contoso Employee Portal |
-
 | Primary Use | Enterprise federation / SSO | Modern application authentication |
-
 | Entra Representation | Enterprise Application | App Registration + Enterprise Application |
-
 | Identity Artifact | SAML Assertion | ID Token |
-
 | Format | XML | JWT |
-
 | Application Role | Service Provider | Relying Party / OIDC Client |
-
 | Entra Role | Identity Provider | OpenID Provider |
-
 | Return Endpoint | Reply URL / ACS | Redirect URI |
-
 | Identity Mapping | NameID / Federation ID | Token claims |
-
 | Flow Demonstrated | Browser-based SAML SSO | Authorization Code |
-
 | Access Control | Entra application assignment | Entra application assignment |
-
 | Negative Access Test | AADSTS50105 | AADSTS50105 |
 
 
