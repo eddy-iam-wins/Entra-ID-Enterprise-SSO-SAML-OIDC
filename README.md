@@ -72,7 +72,7 @@ The environment contains applications using different authentication protocols:
 
 The objective is to provide centralized authentication while maintaining application-specific authorization controls.
 
-
+𝑳𝒂𝒃 𝒅𝒊𝒔𝒄𝒍𝒂𝒊𝒎𝒆𝒓: 𝑨𝒍𝒆𝒙 𝑪𝒂𝒓𝒕𝒆𝒓, 𝑱𝒐𝒓𝒅𝒂𝒏 𝑳𝒆𝒆, 𝒂𝒏𝒅 𝑪𝒂𝒎𝒆𝒓𝒐𝒏 𝑩𝒓𝒐𝒐𝒌𝒔 𝒂𝒓𝒆 𝒇𝒊𝒄𝒕𝒊𝒐𝒏𝒂𝒍 𝒕𝒆𝒔𝒕 𝒊𝒅𝒆𝒏𝒕𝒊𝒕𝒊𝒆𝒔 𝒄𝒓𝒆𝒂𝒕𝒆𝒅 𝒔𝒐𝒍𝒆𝒍𝒚 𝒇𝒐𝒓 𝒕𝒉𝒊𝒔 𝑰𝑨𝑴 𝒍𝒂𝒃. 𝑵𝒐 𝒓𝒆𝒂𝒍 𝒖𝒔𝒆𝒓 𝒐𝒓 𝒆𝒎𝒑𝒍𝒐𝒚𝒆𝒆 𝒅𝒂𝒕𝒂 𝒊𝒔 𝒓𝒆𝒑𝒓𝒆𝒔𝒆𝒏𝒕𝒆𝒅.
 
 ---
 
